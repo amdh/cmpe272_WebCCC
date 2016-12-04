@@ -45,6 +45,28 @@ function buyButton(disabled, cusip, issuer) {
     return td;
 }
 
+function donateButtom(disabled, cusip, issuer) {
+    var button = document.createElement('button');
+    button.setAttribute('type', 'button');
+    button.setAttribute('data_cusip', cusip);
+    button.setAttribute('data_issuer', issuer);
+    if(disabled) button.disabled = true;
+    button.classList.add('donate');
+    button.classList.add('altButton');
+
+    var span = document.createElement('span');
+    span.classList.add('fa');
+    span.classList.add('fa-exchange');
+    span.innerHTML = ' &nbsp;&nbsp;DONATE 1';
+    button.appendChild(span);
+
+    // Wrap the donate button in a td like the other items in the row.
+    var td = document.createElement('td');
+    td.appendChild(button);
+
+    return td;
+}
+
 function paper_to_entries(paper) {
     var entries = [];
     for (var owner in paper.owner) {

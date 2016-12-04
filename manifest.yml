@@ -3,6 +3,6 @@ applications:
   memory: 256M
   instances: 1
   domain: mybluemix.net
-  name: WebCCC
-  host: WebCCC
+  name: cmpe272_WebCCC
+  host: cmpe272_WebCCC
   disk_quota: 1024M

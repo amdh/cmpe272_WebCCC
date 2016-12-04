@@ -1,2 +1,12 @@
+<<<<<<< HEAD
 launchConfigurations/
 .git/
+=======
+**/launchConfigurations
+**/.vscode
+**/public/logs/**
+**/temp
+**/node_modules
+.project
+.tmp
+>>>>>>> a7e2259b9487e4fd451223ed535f9b7cc7efc97c

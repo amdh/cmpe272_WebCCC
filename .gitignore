@@ -1,0 +1,21 @@
+**/launchConfigurations
+**/node_modules
+**/.vscode
+**/temp
+**/public/logs/**
+.project
+cc_summaries/*.json
+
+# hfc SDK credential storage
+**/keyValStore
+
+# CSS is built at runtime from SCSS
+**/public/css/*.css
+
+
+# IntelliJ
+.idea
+
+.tmp
+test.js
+

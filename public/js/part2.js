@@ -59,22 +59,25 @@ $(document).on('ready', function () {
     // =================================================================================
     // jQuery UI Events
     // =================================================================================
-   $("#submit").click(function () {
+  $("#submit").click(function () {
         if (user.username) {
             var obj = {
                 type: "create",
-                charitycart: {
-                    reason: escapeHtml($("input[name='reason']").val()),
-                    amount: Number($("select[name='amount']").val()),                   
-                    donor: [],
-                    acceptor: user.name,
-                    acceptorDate: Date.now().toString()
+                paper: {
+                    ticker: escapeHtml($("input[name='ticker']").val()),
+                    par: Number($("select[name='par']").val()),
+                    qty: Number($("select[name='qty']").val()),
+                    discount: Number($("select[name='discount']").val()),
+                    maturity: Number($("select[name='maturity']").val()),
+                    owner: [],
+                    issuer: user.name,
+                    issueDate: Date.now().toString()
                 },
                 user: user.username
             };
-            if (obj.charitycart && obj.charitycart.reason) {
-                obj.charitycart.reason = obj.charitycart.reason.toUpperCase();
-                console.log('creating charitycart, sending', obj);
+            if (obj.paper && obj.paper.ticker) {
+                obj.paper.ticker = obj.paper.ticker.toUpperCase();
+                console.log('creating paper, sending', obj);
                 ws.send(JSON.stringify(obj));
                 $(".panel").hide();
                 $("#tradePanel").show();
